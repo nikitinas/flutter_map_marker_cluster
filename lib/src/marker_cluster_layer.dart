@@ -698,6 +698,9 @@ class _MarkerClusterLayerState extends State<MarkerClusterLayer>
         return;
       }
 
+      if(cannotDivide && !widget.options.centerMarkerOnClick)
+        return;
+
       final animation = CurvedAnimation(
           parent: _fitBoundController,
           curve: widget.options.animationsOptions.fitBoundCurves);
